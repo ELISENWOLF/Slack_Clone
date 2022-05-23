@@ -9,7 +9,6 @@ function SideBarOptions({ Icon, title, addChannelOption, id }) {
 
   const addChannel = () => {
     // const smalltalk = require('smalltalk');
-    alert("Channel created");
     // smalltalk.prompt('Channel creation','Please type channel name','test')
     // .then((value) => {
     //     console.log(value);
@@ -18,14 +17,14 @@ function SideBarOptions({ Icon, title, addChannelOption, id }) {
     //     console.log('cancel');
     // });
 
-    // const channelName = prompt('Please enter your channel name','abc') ;
-    // if(channelName) {
+    const channelName = prompt('Please enter your channel name','') ;
+    if(channelName) {
     db.collection("rooms").add({
-      name: "Hai",
+      name: channelName,
     });
-    // }
+    alert("Channel creation success")
+    }
   };
-
   const selectChannel = () => {
     if (id) {
       dispatch(
@@ -35,8 +34,7 @@ function SideBarOptions({ Icon, title, addChannelOption, id }) {
       );
     }
   };
-
-  return (
+ return (
     <SideBarOptionsContainer
       onClick={addChannelOption ? addChannel : selectChannel}
     >
@@ -49,6 +47,7 @@ function SideBarOptions({ Icon, title, addChannelOption, id }) {
         </SideBarOptionChannel>
       )}
     </SideBarOptionsContainer>
+    
   );
 }
 
