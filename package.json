@@ -20,6 +20,10 @@
     "smalltalk": "^4.0.7",
     "styled-components": "^5.3.3"
   },
+  "engines": {
+    "node": "14 || 15 || 16",
+    "npm": ">=6"
+  },
   "main": "public/main.js",
   "homepage": "./",
   "scripts": {
