@@ -1,7 +1,7 @@
+import './header.css'
 import React from "react";
 import styled from "styled-components";
 import { Avatar } from "@material-ui/core";
-import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import SearchIcon from "@material-ui/icons/Search";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -13,25 +13,19 @@ function Header() {
   return (
     <HeaderContainer>
       {/* Header left */}
-      <HeaderLeft>
+      <HeaderLeft className='left'>
         <HeaderAvatar
-          onClick={() => auth.signOut()}
           alt={user?.displayName}
           src={user?.photoURL}
         />
-        <AccessTimeIcon />
+        <h5 onClick={() => auth.signOut()}>Logout</h5>
       </HeaderLeft>
 
-      {/* Header Middle */}
-      <HeaderSearch>
+      {/* Header right */}
+      <HeaderSearch className='search'>
         <SearchIcon />
-        <input placeholder="Search" />
+        <input placeholder="Search" className='input'/>
       </HeaderSearch>
-
-      {/* Header Right */}
-      <HeaderRight>
-        <HelpOutlineIcon />
-      </HeaderRight>
     </HeaderContainer>
   );
 }
@@ -76,28 +70,11 @@ const HeaderLeft = styled.div`
   align-items: center;
   margin-left: 20px;
 
-  > .MuiSvgIcon-root {
-    margin-left: auto;
-    margin-right: 30px;
-  }
-`;
-
-const HeaderRight = styled.div`
-  flex: 0.3;
-  diaplay: flex;
-  align-items: flex-end;
-
-  > .MuiSvgIcon-root {
-    margin-left: 30%;
-    margin-right: auto;
-    padding: 0 50%;
+  > h5 {
+    margin-left: 10px;
   }
 `;
 
 const HeaderAvatar = styled(Avatar)`
-  cursor: pointer;
-
-  :hover {
-    opacity: 0.8;
-  }
+ 
 `;

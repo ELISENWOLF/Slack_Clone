@@ -8,14 +8,6 @@ function SideBarOptions({ Icon, title, addChannelOption, id }) {
   const dispatch = useDispatch();
 
   const addChannel = () => {
-    // const smalltalk = require('smalltalk');
-    // smalltalk.prompt('Channel creation','Please type channel name','test')
-    // .then((value) => {
-    //     console.log(value);
-    // })
-    // .catch(() => {
-    //     console.log('cancel');
-    // });
 
     const channelName = prompt('Please enter your channel name','') ;
     if(channelName) {

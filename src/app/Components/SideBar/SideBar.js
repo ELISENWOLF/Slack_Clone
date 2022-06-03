@@ -1,3 +1,4 @@
+import './sidebar.css'
 import React from "react";
 import styled from "styled-components";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
@@ -20,29 +21,18 @@ import { useAuthState } from "react-firebase-hooks/auth";
 function SideBar() {
   const [channels] = useCollection(db.collection("rooms"));
   const [user] = useAuthState(auth);
-  // console.log("user", user); 
 
   return (
-    <SideBarContainer>
+    <SideBarContainer className='container'>
       <SideBarHeader>
         <SideBarInfo>
-          <h3>Elisenwolf #34819</h3>
+          <h3>Elisenwolf</h3>
           <h4>
-            <FiberManualRecordIcon />
+            <FiberManualRecordIcon/>
             {user?.displayName}
           </h4>
         </SideBarInfo>
-        <CreateIcon />
       </SideBarHeader>
-      <SideBarOptions Icon={InsertCommentIcon} title="Threads" />
-      <SideBarOptions Icon={InboxIcon} title="Mentions & reactions" />
-      <SideBarOptions Icon={DraftIcon} title="Saved items" />
-      <SideBarOptions Icon={BookmarkBorderIcon} title="Channel browser" />
-      <SideBarOptions Icon={PeopleAltIcon} title="People & user groups" />
-      <SideBarOptions Icon={AppsIcon} title="Apps" />
-      <SideBarOptions Icon={FileCopyIcon} title="File browser" />
-      <SideBarOptions Icon={ExpandLessIcon} title="Show less" />
-      <hr />
       <SideBarOptions Icon={ExpandMoreIcon} title="Channels" />
       <hr />
       <SideBarOptions Icon={AddIcon} addChannelOption title="Add Channels" />

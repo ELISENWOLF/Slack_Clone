@@ -1,0 +1,47 @@
+h5:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
+
+/* ===== MEDIA QUERIES (LARGE DEVICES) ===== */
+
+@media screen and (max-width:1024px) {
+    h4 {
+        font-size: 12px
+    }
+}
+
+/* ===== MEDIA QUERIES (MEDIUM DEVICES) ===== */
+
+@media screen and (max-width:600px) {
+    .container {
+        width: fit-content;
+    }
+    h4 {
+        font-size: 10px
+    }
+}
+
+/* ===== MEDIA QUERIES (SMALL DEVICES) ===== */
+
+@media screen and (max-width:400px) {
+    .left {
+        margin-left: 3px;
+    }
+
+    h5 {
+        font-size: 9px;
+    }
+    
+    .search {
+        margin-right: 5px;
+    }
+
+    .input {
+        width: 1rem;
+        margin-right: 1rem;
+    }
+
+}
