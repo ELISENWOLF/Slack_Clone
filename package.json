@@ -20,18 +20,14 @@
     "smalltalk": "^4.0.7",
     "styled-components": "^5.3.3"
   },
-  "engines": {
-    "node": "14 || 15 || 16",
-    "npm": ">=6"
-  },
   "main": "public/main.js",
   "homepage": "./",
   "scripts": {
-    "start": "react-scripts --max_old_space_size=4096 start",
-    "build": "react-scripts --max_old_space_size=4096 build",
+    "start": "react-scripts --min_old_space_size=4096 --max_old_space_size=6144 start",
+    "build": "react-scripts --min_old_space_size=4096 --max_old_space_size=6144 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm run electron:start\"",
+    "electron:serve": "concurrently -k \"cross-env npm start\" \"npm run electron:start\"",
     "electron:build": "npm build && electron-builder",
     "electron:start": "wait-on tcp:3000 && electron ."
   },
